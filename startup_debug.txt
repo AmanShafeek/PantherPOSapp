@@ -1,0 +1,144 @@
+--- BOOT SEQUENCE STARTS ---
+[2026-01-18T14:48:32.341Z] Process ExecPath: D:\POS\node_modules\electron\dist\electron.exe
+[2026-01-18T14:48:32.343Z] ELECTRON_RUN_AS_NODE: undefined
+[2026-01-18T14:48:32.343Z] Electron Version: 28.0.0
+[2026-01-18T14:48:32.344Z] Chrome Version: 120.0.6099.56
+[2026-01-18T14:48:32.344Z] Node Version: 18.18.2
+[2026-01-18T14:48:32.344Z] App available: true
+[2026-01-18T14:48:32.344Z] BrowserWindow available: true
+[2026-01-18T14:48:32.380Z] App ready event received
+[2026-01-18T14:48:32.382Z] Requiring DB module...
+[2026-01-18T14:48:32.386Z] Initializing DB...
+[2026-01-18T14:48:32.388Z] Initializing DB (sql.js) at: D:\POS\pos.db
+[2026-01-18T14:48:32.389Z] Backup Directory: C:\Users\rahma\AppData\Roaming\pos-app\backups
+[2026-01-18T14:48:32.390Z] Mode: Development
+[2026-01-18T14:48:32.390Z] WASM Path: D:\POS\node_modules\sql.js\dist\sql-wasm.wasm
+[2026-01-18T14:48:32.390Z] WASM Exists: true
+[2026-01-18T14:48:32.402Z] SQL.js initialized
+[2026-01-18T14:48:32.427Z] Migration Note (image column): duplicate column name: image
+[2026-01-18T14:48:32.428Z] Migration: Created customer_ledger table
+[2026-01-18T14:48:32.451Z] DB Initialized
+[2026-01-18T14:48:32.452Z] Creating window...
+[2026-01-18T14:48:32.493Z] Loading Dev URL
+[2026-01-18T14:48:33.618Z] [Renderer-DEBUG] [vite] connecting... (http://127.0.0.1:5173/@vite/client:733)
+[2026-01-18T14:48:34.244Z] [Renderer-DEBUG] [vite] connected. (http://127.0.0.1:5173/@vite/client:827)
+[2026-01-18T14:48:34.829Z] [Renderer-INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-LPF6KSF2.js?v=5f358e64:21609)
+[2026-01-18T14:48:34.902Z] [Renderer-INFO] Current Hash:  (http://127.0.0.1:5173/src/App.tsx:44)
+[2026-01-18T14:48:34.903Z] [Renderer-INFO] 🎤 Command Gateway Initialized (http://127.0.0.1:5173/src/services/CommandGateway.ts:15)
+[2026-01-18T14:48:34.904Z] [Renderer-INFO] 🤖 Proactive Service Initialized (http://127.0.0.1:5173/src/services/proactiveService.ts:5)
+[2026-01-18T14:48:34.906Z] [Renderer-INFO] [Proactive] Checking for low stock items... (http://127.0.0.1:5173/src/services/proactiveService.ts:17)
+[2026-01-18T14:48:34.923Z] [Renderer-INFO] Current Hash:  (http://127.0.0.1:5173/src/App.tsx:44)
+[2026-01-18T14:48:34.924Z] [Renderer-INFO] 🎤 Command Gateway Initialized (http://127.0.0.1:5173/src/services/CommandGateway.ts:15)
+[2026-01-18T14:48:34.925Z] [Renderer-INFO] 🤖 Proactive Service Initialized (http://127.0.0.1:5173/src/services/proactiveService.ts:5)
+[2026-01-18T14:48:34.925Z] [Renderer-INFO] [Proactive] Checking for low stock items... (http://127.0.0.1:5173/src/services/proactiveService.ts:17)
+[2026-01-18T14:48:34.926Z] [Renderer-INFO] [Proactive] Checking for low stock items... (http://127.0.0.1:5173/src/services/proactiveService.ts:17)
+[2026-01-18T14:48:34.940Z] [Renderer-WARN] %cElectron Security Warning (Disabled webSecurity) font-weight: bold; This renderer process has "webSecurity" disabled. This
+  exposes users of this app to severe security risks.
+
+For more information and help, consult
+https://electronjs.org/docs/tutorial/security.
+This warning will not show up
+once the app is packaged. (node:electron/js2c/sandbox_bundle:2)
+[2026-01-18T14:48:34.940Z] [Renderer-WARN] %cElectron Security Warning (allowRunningInsecureContent) font-weight: bold; This renderer process has "allowRunningInsecureContent"
+  enabled. This exposes users of this app to severe security risks.
+
+  
+For more information and help, consult
+https://electronjs.org/docs/tutorial/security.
+This warning will not show up
+once the app is packaged. (node:electron/js2c/sandbox_bundle:2)
+[2026-01-18T14:48:34.941Z] [Renderer-WARN] %cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security
+  Policy set or a policy with "unsafe-eval" enabled. This exposes users of
+  this app to unnecessary security risks.
+
+For more information and help, consult
+https://electronjs.org/docs/tutorial/security.
+This warning will not show up
+once the app is packaged. (node:electron/js2c/sandbox_bundle:2)
+[2026-01-18T14:48:34.941Z] [Renderer-INFO] [Proactive] Low stock query result: [object Object],[object Object],[object Object] (http://127.0.0.1:5173/src/services/proactiveService.ts:23)
+[2026-01-18T14:48:34.942Z] [Renderer-INFO] [Proactive] Triggering toast for: demo1 (0), demo3 (0), demo4 (0) (http://127.0.0.1:5173/src/services/proactiveService.ts:26)
+[2026-01-18T14:48:34.943Z] [Renderer-INFO] [Proactive] Low stock query result: [object Object],[object Object],[object Object] (http://127.0.0.1:5173/src/services/proactiveService.ts:23)
+[2026-01-18T14:48:34.944Z] [Renderer-INFO] [Proactive] Triggering toast for: demo1 (0), demo3 (0), demo4 (0) (http://127.0.0.1:5173/src/services/proactiveService.ts:26)
+[2026-01-18T14:48:34.944Z] [Renderer-INFO] [Proactive] Low stock query result: [object Object],[object Object],[object Object] (http://127.0.0.1:5173/src/services/proactiveService.ts:23)
+[2026-01-18T14:48:34.944Z] [Renderer-INFO] [Proactive] Triggering toast for: demo1 (0), demo3 (0), demo4 (0) (http://127.0.0.1:5173/src/services/proactiveService.ts:26)
+[2026-01-18T14:48:34.965Z] [Renderer-INFO] [Database] Initializing tables... (http://127.0.0.1:5173/src/services/databaseService.ts:7)
+[2026-01-18T14:48:34.986Z] [Renderer-INFO] [Database] Initializing tables... (http://127.0.0.1:5173/src/services/databaseService.ts:7)
+[2026-01-18T14:48:35.127Z] [Renderer-INFO] [Database] Tables initialized successfully (http://127.0.0.1:5173/src/services/databaseService.ts:80)
+[2026-01-18T14:48:35.128Z] [Renderer-INFO] [Database] Tables initialized successfully (http://127.0.0.1:5173/src/services/databaseService.ts:80)
+[2026-01-18T14:48:35.129Z] [Renderer-INFO] DB Ready (http://127.0.0.1:5173/src/App.tsx:63)
+[2026-01-18T14:48:35.129Z] [Renderer-INFO] DB Ready (http://127.0.0.1:5173/src/App.tsx:63)
+[2026-01-18T14:48:39.867Z] [Renderer-INFO] [Proactive] Checking for low stock items... (http://127.0.0.1:5173/src/services/proactiveService.ts:17)
+[2026-01-18T14:48:39.868Z] [Renderer-INFO] [Proactive] Checking for low stock items... (http://127.0.0.1:5173/src/services/proactiveService.ts:17)
+[2026-01-18T14:48:39.870Z] [Renderer-INFO] [Proactive] Low stock query result: [object Object],[object Object],[object Object] (http://127.0.0.1:5173/src/services/proactiveService.ts:23)
+[2026-01-18T14:48:39.872Z] [Renderer-INFO] [Proactive] Triggering toast for: demo1 (0), demo3 (0), demo4 (0) (http://127.0.0.1:5173/src/services/proactiveService.ts:26)
+[2026-01-18T14:48:39.876Z] [Renderer-INFO] [Proactive] Low stock query result: [object Object],[object Object],[object Object] (http://127.0.0.1:5173/src/services/proactiveService.ts:23)
+[2026-01-18T14:48:39.878Z] [Renderer-INFO] [Proactive] Triggering toast for: demo1 (0), demo3 (0), demo4 (0) (http://127.0.0.1:5173/src/services/proactiveService.ts:26)
+[2026-01-18T14:48:44.511Z] [Renderer-WARN] ⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition. (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=5f358e64:4435)
+[2026-01-18T14:48:44.512Z] [Renderer-WARN] ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath. (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=5f358e64:4435)
+[2026-01-18T14:49:28.926Z] [Renderer-DEBUG] [vite] hot updated: /src/pages/Products.tsx (http://127.0.0.1:5173/@vite/client:810)
+[2026-01-18T14:49:28.927Z] [Renderer-DEBUG] [vite] hot updated: /src/index.css (http://127.0.0.1:5173/@vite/client:810)
+[2026-01-18T14:49:29.715Z] [Renderer-ERROR] Uncaught ReferenceError: Search is not defined (http://127.0.0.1:5173/src/pages/Products.tsx?t=1768747768809:226)
+[2026-01-18T14:49:29.722Z] [Renderer-ERROR] Uncaught ReferenceError: Search is not defined (http://127.0.0.1:5173/src/pages/Products.tsx?t=1768747768809:226)
+[2026-01-18T14:49:29.736Z] [Renderer-ERROR] The above error occurred in the <Products> component:
+
+    at Products (http://127.0.0.1:5173/src/pages/Products.tsx?t=1768747768809:23:35)
+    at RenderedRoute (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=5f358e64:4130:5)
+    at Routes (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=5f358e64:4600:5)
+    at div
+    at main
+    at div
+    at AppShell (http://127.0.0.1:5173/src/layouts/AppShell.tsx:8:36)
+    at Router (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=5f358e64:4543:15)
+    at HashRouter (http://127.0.0.1:5173/node_modules/.vite/deps/react-router-dom.js?v=5f358e64:5325:5)
+    at App (http://127.0.0.1:5173/src/App.tsx:37:27)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries. (http://127.0.0.1:5173/node_modules/.vite/deps/chunk-LPF6KSF2.js?v=5f358e64:14080)
+[2026-01-18T14:49:29.737Z] [Renderer-ERROR] Uncaught (in promise) ReferenceError: Search is not defined (http://127.0.0.1:5173/src/pages/Products.tsx?t=1768747768809:226)
+[2026-01-18T14:49:30.719Z] [Renderer-DEBUG] [vite] hot updated: /src/pages/Products.tsx (http://127.0.0.1:5173/@vite/client:810)
+[2026-01-18T14:49:30.721Z] [Renderer-DEBUG] [vite] hot updated: /src/index.css (http://127.0.0.1:5173/@vite/client:810)
+[2026-01-18T14:49:31.704Z] [Renderer-INFO] Current Hash: #/products (http://127.0.0.1:5173/src/App.tsx:44)
+[2026-01-18T14:49:31.705Z] [Renderer-INFO] 🎤 Command Gateway Initialized (http://127.0.0.1:5173/src/services/CommandGateway.ts:15)
+[2026-01-18T14:49:31.705Z] [Renderer-INFO] 🤖 Proactive Service Initialized (http://127.0.0.1:5173/src/services/proactiveService.ts:5)
+[2026-01-18T14:49:31.706Z] [Renderer-INFO] [Proactive] Checking for low stock items... (http://127.0.0.1:5173/src/services/proactiveService.ts:17)
+[2026-01-18T14:49:31.707Z] [Renderer-INFO] [Proactive] Checking for low stock items... (http://127.0.0.1:5173/src/services/proactiveService.ts:17)
+[2026-01-18T14:49:31.708Z] [Renderer-INFO] [Proactive] Checking for low stock items... (http://127.0.0.1:5173/src/services/proactiveService.ts:17)
+[2026-01-18T14:49:31.723Z] [Renderer-INFO] Current Hash: #/products (http://127.0.0.1:5173/src/App.tsx:44)
+[2026-01-18T14:49:31.724Z] [Renderer-INFO] 🎤 Command Gateway Initialized (http://127.0.0.1:5173/src/services/CommandGateway.ts:15)
+[2026-01-18T14:49:31.724Z] [Renderer-INFO] 🤖 Proactive Service Initialized (http://127.0.0.1:5173/src/services/proactiveService.ts:5)
+[2026-01-18T14:49:31.725Z] [Renderer-INFO] [Proactive] Checking for low stock items... (http://127.0.0.1:5173/src/services/proactiveService.ts:17)
+[2026-01-18T14:49:31.726Z] [Renderer-INFO] [Proactive] Checking for low stock items... (http://127.0.0.1:5173/src/services/proactiveService.ts:17)
+[2026-01-18T14:49:31.727Z] [Renderer-INFO] [Proactive] Checking for low stock items... (http://127.0.0.1:5173/src/services/proactiveService.ts:17)
+[2026-01-18T14:49:31.727Z] [Renderer-INFO] [Proactive] Checking for low stock items... (http://127.0.0.1:5173/src/services/proactiveService.ts:17)
+[2026-01-18T14:49:31.741Z] [Renderer-INFO] [Proactive] Low stock query result: [object Object],[object Object],[object Object] (http://127.0.0.1:5173/src/services/proactiveService.ts:23)
+[2026-01-18T14:49:31.741Z] [Renderer-INFO] [Proactive] Triggering toast for: demo1 (0), demo3 (0), demo4 (0) (http://127.0.0.1:5173/src/services/proactiveService.ts:26)
+[2026-01-18T14:49:31.742Z] [Renderer-INFO] [Proactive] Low stock query result: [object Object],[object Object],[object Object] (http://127.0.0.1:5173/src/services/proactiveService.ts:23)
+[2026-01-18T14:49:31.743Z] [Renderer-INFO] [Proactive] Triggering toast for: demo1 (0), demo3 (0), demo4 (0) (http://127.0.0.1:5173/src/services/proactiveService.ts:26)
+[2026-01-18T14:49:31.743Z] [Renderer-INFO] [Proactive] Low stock query result: [object Object],[object Object],[object Object] (http://127.0.0.1:5173/src/services/proactiveService.ts:23)
+[2026-01-18T14:49:31.744Z] [Renderer-INFO] [Proactive] Triggering toast for: demo1 (0), demo3 (0), demo4 (0) (http://127.0.0.1:5173/src/services/proactiveService.ts:26)
+[2026-01-18T14:49:31.745Z] [Renderer-INFO] [Proactive] Low stock query result: [object Object],[object Object],[object Object] (http://127.0.0.1:5173/src/services/proactiveService.ts:23)
+[2026-01-18T14:49:31.745Z] [Renderer-INFO] [Proactive] Triggering toast for: demo1 (0), demo3 (0), demo4 (0) (http://127.0.0.1:5173/src/services/proactiveService.ts:26)
+[2026-01-18T14:49:31.746Z] [Renderer-INFO] [Proactive] Low stock query result: [object Object],[object Object],[object Object] (http://127.0.0.1:5173/src/services/proactiveService.ts:23)
+[2026-01-18T14:49:31.746Z] [Renderer-INFO] [Proactive] Triggering toast for: demo1 (0), demo3 (0), demo4 (0) (http://127.0.0.1:5173/src/services/proactiveService.ts:26)
+[2026-01-18T14:49:31.747Z] [Renderer-INFO] [Proactive] Low stock query result: [object Object],[object Object],[object Object] (http://127.0.0.1:5173/src/services/proactiveService.ts:23)
+[2026-01-18T14:49:31.747Z] [Renderer-INFO] [Proactive] Triggering toast for: demo1 (0), demo3 (0), demo4 (0) (http://127.0.0.1:5173/src/services/proactiveService.ts:26)
+[2026-01-18T14:49:31.748Z] [Renderer-INFO] [Proactive] Low stock query result: [object Object],[object Object],[object Object] (http://127.0.0.1:5173/src/services/proactiveService.ts:23)
+[2026-01-18T14:49:31.749Z] [Renderer-INFO] [Proactive] Triggering toast for: demo1 (0), demo3 (0), demo4 (0) (http://127.0.0.1:5173/src/services/proactiveService.ts:26)
+[2026-01-18T14:49:31.768Z] [Renderer-INFO] [Database] Initializing tables... (http://127.0.0.1:5173/src/services/databaseService.ts:7)
+[2026-01-18T14:49:31.782Z] [Renderer-INFO] [Database] Initializing tables... (http://127.0.0.1:5173/src/services/databaseService.ts:7)
+[2026-01-18T14:49:31.926Z] [Renderer-INFO] [Database] Tables initialized successfully (http://127.0.0.1:5173/src/services/databaseService.ts:80)
+[2026-01-18T14:49:31.927Z] [Renderer-INFO] [Database] Tables initialized successfully (http://127.0.0.1:5173/src/services/databaseService.ts:80)
+[2026-01-18T14:49:31.928Z] [Renderer-INFO] DB Ready (http://127.0.0.1:5173/src/App.tsx:63)
+[2026-01-18T14:49:31.929Z] [Renderer-INFO] DB Ready (http://127.0.0.1:5173/src/App.tsx:63)
+[2026-01-18T14:49:37.779Z] [Renderer-INFO] [Proactive] Checking for low stock items... (http://127.0.0.1:5173/src/services/proactiveService.ts:17)
+[2026-01-18T14:49:37.780Z] [Renderer-INFO] [Proactive] Checking for low stock items... (http://127.0.0.1:5173/src/services/proactiveService.ts:17)
+[2026-01-18T14:49:37.781Z] [Renderer-INFO] [Proactive] Low stock query result: [object Object],[object Object],[object Object] (http://127.0.0.1:5173/src/services/proactiveService.ts:23)
+[2026-01-18T14:49:37.782Z] [Renderer-INFO] [Proactive] Triggering toast for: demo1 (0), demo3 (0), demo4 (0) (http://127.0.0.1:5173/src/services/proactiveService.ts:26)
+[2026-01-18T14:49:37.783Z] [Renderer-INFO] [Proactive] Low stock query result: [object Object],[object Object],[object Object] (http://127.0.0.1:5173/src/services/proactiveService.ts:23)
+[2026-01-18T14:49:37.784Z] [Renderer-INFO] [Proactive] Triggering toast for: demo1 (0), demo3 (0), demo4 (0) (http://127.0.0.1:5173/src/services/proactiveService.ts:26)
+[2026-01-18T14:53:34.954Z] [Renderer-DEBUG] [vite] hot updated: /src/pages/Sales.tsx (http://127.0.0.1:5173/@vite/client:810)
+[2026-01-18T14:53:34.955Z] [Renderer-DEBUG] [vite] hot updated: /src/index.css (http://127.0.0.1:5173/@vite/client:810)
+[2026-01-18T14:53:36.419Z] [Renderer-DEBUG] [vite] hot updated: /src/components/Modal.tsx (http://127.0.0.1:5173/@vite/client:810)
+[2026-01-18T14:53:36.420Z] [Renderer-DEBUG] [vite] hot updated: /src/index.css (http://127.0.0.1:5173/@vite/client:810)
+[2026-01-18T14:53:38.922Z] [Renderer-DEBUG] [vite] hot updated: /src/components/Modal.tsx (http://127.0.0.1:5173/@vite/client:810)
+[2026-01-18T14:53:38.923Z] [Renderer-DEBUG] [vite] hot updated: /src/index.css (http://127.0.0.1:5173/@vite/client:810)
