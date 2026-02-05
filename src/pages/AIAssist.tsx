@@ -1,13 +1,37 @@
 import { useState, useEffect, useRef } from 'react';
 import { aiChatbotService, type ChatMessage } from '../services/AIChatbotService';
 import { voiceCommandService, type VoiceStatus } from '../services/voiceCommandService';
-import { Send, Mic, MicOff, Bot, Loader2 } from 'lucide-react';
+import { Send, Mic, MicOff, Bot, Loader2, Sparkles } from 'lucide-react';
 import toast from 'react-hot-toast';
+
+const AI_SUGGESTIONS_STORAGE = 'pos_ai_command_counts';
+const MAX_SUGGESTIONS = 3;
+const DEFAULT_SUGGESTIONS = ['New Bill', 'Show Profit'];
+
+function recordCommand(cmd: string) {
+    const raw = localStorage.getItem(AI_SUGGESTIONS_STORAGE);
+    const counts: Record<string, number> = raw ? JSON.parse(raw) : {};
+    const key = cmd.trim();
+    if (!key) return;
+    counts[key] = (counts[key] || 0) + 1;
+    localStorage.setItem(AI_SUGGESTIONS_STORAGE, JSON.stringify(counts));
+}
+
+function getTopSuggestions(): string[] {
+    const raw = localStorage.getItem(AI_SUGGESTIONS_STORAGE);
+    const counts: Record<string, number> = raw ? JSON.parse(raw) : {};
+    const sorted = Object.entries(counts)
+        .sort(([, a], [, b]) => b - a)
+        .map(([cmd]) => cmd)
+        .slice(0, MAX_SUGGESTIONS);
+    return sorted.length > 0 ? sorted : DEFAULT_SUGGESTIONS;
+}
 
 export default function AIAssist() {
     const [messages, setMessages] = useState<ChatMessage[]>([]);
     const [input, setInput] = useState('');
     const [voiceStatus, setVoiceStatus] = useState<VoiceStatus>('OFFLINE');
+    const [suggestions, setSuggestions] = useState<string[]>(getTopSuggestions());
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
     // --- LOGIC (Copied & Adapted from Widget) ---
@@ -38,12 +62,21 @@ export default function AIAssist() {
 
     const handleSend = async () => {
         if (!input.trim()) return;
-        await aiChatbotService.sendText(input);
+        const cmd = input.trim();
+        recordCommand(cmd);
+        setSuggestions(getTopSuggestions());
+        await aiChatbotService.sendText(cmd);
         setInput('');
     };
 
     const handleKeyDown = (e: React.KeyboardEvent) => {
         if (e.key === 'Enter') handleSend();
+    };
+
+    const handleSuggestionClick = async (cmd: string) => {
+        recordCommand(cmd);
+        setSuggestions(getTopSuggestions());
+        await aiChatbotService.sendText(cmd);
     };
 
     const toggleVoice = async () => {
@@ -231,6 +264,23 @@ export default function AIAssist() {
                     </div>
                 ))}
                 <div ref={messagesEndRef} />
+            </div>
+
+            <div className="mb-3 flex items-center gap-2 overflow-x-auto pb-1 scrollbar-thin scrollbar-thumb-muted-foreground/20 scrollbar-track-transparent">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground shrink-0 flex items-center gap-1.5">
+                    <Sparkles size={12} className="text-primary" /> Suggestions
+                </span>
+                <div className="flex gap-2 flex-wrap min-w-0">
+                    {suggestions.map((cmd) => (
+                        <button
+                            key={cmd}
+                            onClick={() => handleSuggestionClick(cmd)}
+                            className="px-3 py-1.5 text-xs font-medium rounded-full bg-muted/80 hover:bg-primary/20 hover:text-primary border border-border/50 hover:border-primary/30 text-foreground/90 transition-all duration-200 shrink-0"
+                        >
+                            {cmd}
+                        </button>
+                    ))}
+                </div>
             </div>
 
             <div className="p-1 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent rounded-xl">
