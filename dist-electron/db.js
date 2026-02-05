@@ -719,8 +719,6 @@ function query(sql, params = []) {
         return rows;
     }
     else {
-        console.log(`[DB] Executing Run: ${sql}`);
-        console.log(`[DB] Params: ${JSON.stringify(params)}`);
         db.run(sql, params);
         const changes = db.getRowsModified();
         save(); // Auto-save on writes

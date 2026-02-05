@@ -43,13 +43,10 @@ export const authService = {
         if (fields.length === 0) return 0;
 
         params.push(id);
-        console.log(`[AuthService] Updating User ${id}:`, { fields, params }); // DEBUG LOG
-
         const result = await databaseService.query(
             `UPDATE users SET ${fields.join(', ')} WHERE id = ?`,
             params
         );
-        console.log(`[AuthService] Update Result:`, result); // DEBUG LOG
         return result.changes;
     },
 
