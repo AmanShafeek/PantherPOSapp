@@ -19,7 +19,6 @@
     "@capacitor/core": "^8.0.1",
     "@capacitor/ios": "^8.0.1",
     "@fastify/cors": "^8.5.0",
-    "@serialport/bindings-cpp": "^10.8.0",
     "@types/qrcode.react": "^1.0.5",
     "axios": "^1.13.4",
     "clsx": "^2.1.0",
