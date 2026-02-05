@@ -27,6 +27,7 @@ import {
 import { useState, useEffect } from 'react';
 import { databaseService } from '../services/databaseService';
 import { platformService } from '../services/platformService';
+import { useKeyboard } from '../hooks/useKeyboard';
 
 interface SidebarProps {
     user: any;
@@ -78,6 +79,81 @@ export default function Sidebar({ user, onLogout, isOpen = false, onClose }: Sid
         { icon: Building, label: 'Company', path: '/my-company' },
         { icon: LogOut, label: 'End of Day', path: '/end-of-day' },
     ];
+
+    // Keyboard shortcuts for sidebar tabs starting from the letter "q"
+    const shortcutKeys = [
+        'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',
+        'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z',
+        'x', 'c', 'v', 'b', 'n', 'm',
+    ];
+
+    const menuItemsWithShortcuts = menuItems.map((item, index) => ({
+        ...item,
+        shortcut: shortcutKeys[index],
+    }));
+
+    // Register global keyboard shortcuts for quick tab navigation
+    const keyboardMap: Record<string, (e: KeyboardEvent) => void> = {};
+
+    // Letter shortcuts (q, w, e, ...)
+    menuItemsWithShortcuts.forEach((item) => {
+        if (!item.shortcut) return;
+
+        keyboardMap[item.shortcut] = (e: KeyboardEvent) => {
+            const target = e.target as HTMLElement | null;
+            const tag = target?.tagName.toLowerCase();
+            const isEditable =
+                tag === 'input' ||
+                tag === 'textarea' ||
+                (target != null && target.isContentEditable);
+
+            if (isEditable) return;
+
+            e.preventDefault();
+            navigate(item.path);
+            if (onClose) onClose();
+        };
+    });
+
+    // Helper to move between tabs with arrow keys
+    const navigateRelative = (direction: -1 | 1, e: KeyboardEvent) => {
+        const target = (e.target as HTMLElement | null) ?? (document.activeElement as HTMLElement | null);
+        const tag = target?.tagName.toLowerCase();
+        const isEditable =
+            tag === 'textarea' ||
+            (target != null && target.isContentEditable);
+
+        // Allow arrow navigation even when an <input> has focus,
+        // but still avoid hijacking textareas / rich text editors.
+        if (isEditable) return;
+
+        const total = menuItemsWithShortcuts.length;
+        if (total === 0) return;
+
+        // Try exact match first, then prefix match for nested routes (e.g. /reports/sales)
+        let currentIndex = menuItemsWithShortcuts.findIndex((item) => item.path === location.pathname);
+        if (currentIndex === -1) {
+            currentIndex = menuItemsWithShortcuts.findIndex((item) =>
+                location.pathname.startsWith(item.path) && item.path !== '/'
+            );
+        }
+
+        const baseIndex = currentIndex === -1 ? 0 : currentIndex;
+        const nextIndex = (baseIndex + direction + total) % total;
+        const nextItem = menuItemsWithShortcuts[nextIndex];
+
+        e.preventDefault();
+        navigate(nextItem.path);
+        if (onClose) onClose();
+    };
+
+    // Left / Right (and Up/Down) arrows move between tabs
+    keyboardMap['ArrowLeft'] = (e) => navigateRelative(-1, e);
+    keyboardMap['ArrowUp'] = (e) => navigateRelative(-1, e);
+    keyboardMap['ArrowRight'] = (e) => navigateRelative(1, e);
+    keyboardMap['ArrowDown'] = (e) => navigateRelative(1, e);
+
+    useKeyboard(keyboardMap);
 
     return (
         <>
@@ -150,7 +226,7 @@ export default function Sidebar({ user, onLogout, isOpen = false, onClose }: Sid
 
                 {/* Navigation */}
                 <nav className="flex-1 px-4 py-2 space-y-1 overflow-y-auto no-scrollbar">
-                    {menuItems.map((item) => {
+                    {menuItemsWithShortcuts.map((item) => {
                         const isActive = location.pathname === item.path;
 
                         return (
@@ -172,6 +248,11 @@ export default function Sidebar({ user, onLogout, isOpen = false, onClose }: Sid
                                 <span className="text-sm font-medium tracking-wide">
                                     {item.label}
                                 </span>
+                                {item.shortcut && (
+                                    <span className="ml-auto text-[10px] font-mono uppercase text-muted-foreground/60">
+                                        {item.shortcut}
+                                    </span>
+                                )}
                             </button>
                         );
                     })}

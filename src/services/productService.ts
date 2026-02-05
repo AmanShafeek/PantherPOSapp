@@ -42,6 +42,21 @@ export const productService = {
         );
     },
 
+    // Lightweight local search used by some UI flows (e.g. Stocktake)
+    // Works against mock products (non-Electron) and can be extended for cached datasets.
+    searchProductsLocal: (query: string): Product[] => {
+        const q = query.trim().toLowerCase();
+        const products = getMockProducts();
+        if (!q) return products;
+
+        return products.filter((p) => {
+            const nameMatch = p.name?.toLowerCase().includes(q);
+            const barcodeMatch = p.barcode?.includes(query);
+            const hsnMatch = p.hsn_code?.toLowerCase().includes(q);
+            return nameMatch || barcodeMatch || hsnMatch;
+        });
+    },
+
     create: async (product: Omit<Product, 'id'>): Promise<number> => {
         const result = await databaseService.query(
             `INSERT INTO products (name, barcode, cost_price, sell_price, stock, gst_rate, hsn_code, min_stock_level, image, variant_group_id, attributes)
